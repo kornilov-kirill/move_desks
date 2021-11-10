@@ -105,8 +105,8 @@ function add_asset_to_staffmap($data) {
 function remove_bad_sings($value) {
     $value = str_replace('"', '', $value);
     $value = str_replace("'", '', $value);
-    $value = str_replace('/', '', $value);
-    $value = str_replace('\\', '', $value);
+    $value = str_replace('/', urlencode("/"), $value);
+    $value = str_replace('\\', urlencode("\\"), $value);
     return $value;
 }
 
